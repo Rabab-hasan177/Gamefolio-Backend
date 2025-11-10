@@ -13,7 +13,7 @@ const gameSchema = new Schema(
     },
     image: {
       type: String,
-      required: true,
+      // required: true,
     },
     owner: {
     type: mongoose.Schema.Types.ObjectId,

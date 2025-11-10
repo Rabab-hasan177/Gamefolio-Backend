@@ -2,7 +2,8 @@ const express = require("express")
 const logger = require("morgan")
 const cors = require("cors")
 
-
+const UserRouter = require('./routes/UserRouter')
+const GameRouter = require('./routes/GameRouter')
 
 const PORT = process.env.PORT || 3000
 
@@ -20,6 +21,8 @@ const path = require("path")
 app.use(express.static(path.join(__dirname, "public")))
 app.use(express.static('public'))
 
+app.use('/User', UserRouter)
+app.use('/Game', GameRouter)
 
 
 app.listen(PORT, () => {
