@@ -18,6 +18,22 @@ exports.create_game = async (req, res) => {
     res.status(500).send({ msg: "Error creating new game!", error })
   }
 }
+exports.update_game = async (req, res) => {
+try {
+    const updatedGame = await Game.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    })
+
+    if (!updatedGame) {
+      return res.status(404).send("Game not found for update")
+    }
+
+    res.status(200).send(updatedGame)
+  } catch (error) {
+    console.error("Error updating game:", error)
+    res.status(500).send("Error updating game")
+  }
+}
 
 exports.delete_game = async (req, res) => {
   try {
