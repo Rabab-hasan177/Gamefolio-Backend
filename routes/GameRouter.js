@@ -5,6 +5,11 @@ const upload = require("../middleware/upload")
 
 router.get("/", gameCtrl.get_game)
 
+router.get("/:id",
+  middleware.stripToken,
+  middleware.verifyToken,
+  gameCtrl.GetGameById)
+
 router.post(
   "/createGame",
   middleware.stripToken,
