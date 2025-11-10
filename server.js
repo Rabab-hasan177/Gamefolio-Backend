@@ -4,7 +4,7 @@ const cors = require("cors")
 
 const UserRouter = require('./routes/UserRouter')
 const GameRouter = require('./routes/GameRouter')
-
+const CommentRouter = require('./routes/CommentRouter')
 const PORT = process.env.PORT || 3000
 
 const db = require("./db")
@@ -23,8 +23,9 @@ app.use(express.static('public'))
 
 app.use('/User', UserRouter)
 app.use('/Game', GameRouter)
-
+app.use('/Comment', CommentRouter )
 
 app.listen(PORT, () => {
   console.log(`Running Server on Port ${PORT} . . . `)
 })
+
