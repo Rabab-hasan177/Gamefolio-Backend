@@ -15,6 +15,15 @@ exports.create_game = async (req, res) => {
     let newGame = await Game.create({...req.body, image:image})
     res.json(newGame)
   } catch (error) {
-    res.status(500).send({ msg: "Error creating new post!", error })
+    res.status(500).send({ msg: "Error creating new game!", error })
+  }
+}
+
+exports.delete_game = async (req, res) => {
+  try {
+    await Game.deleteOne({ _id: req.params.gameId })
+    res.status(200).send({ msg: "Game Deleted", id: req.params.gameId })
+  } catch (error) {
+    throw error
   }
 }
