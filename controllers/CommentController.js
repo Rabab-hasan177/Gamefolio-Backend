@@ -19,6 +19,7 @@ const CreateComment = async (req, res) => {
 }
 const DeleteComment = async (req, res) => {
   try {
+    
     await Comment.deleteOne({ _id: req.params.id })
     res.status(200).send({ msg: "comment Deleted", id: req.params.id })
   } catch (error) {

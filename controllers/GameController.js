@@ -2,7 +2,7 @@ const Game = require("../models/Game")
 
 exports.get_game = async (req, res) => {
   try {
-    const games = await Game.find({}).populate("Comment")
+    const games = await Game.find({}).populate("comments")
     res.status(200).send(games)
   } catch (error) {
     res.status(500).send({ msg: "Error fetching games!", error })
@@ -10,7 +10,7 @@ exports.get_game = async (req, res) => {
 }
 exports.GetGameById = async (req, res) => {
   try {
-    const game = await Game.findById(req.params.id).populate("owner")
+    const game = await Game.findById(req.params.id).populate("owner").populate("comments")
     if (!game) {
       return res.status(404).send("Game not found")
     }
@@ -37,7 +37,7 @@ exports.update_game = async (req, res) => {
       updateData.image = `uploads/${req.file.filename}`
     }
 
-    const updatedGame = await Game.findByIdAndUpdate(req.params.id, req.body, {
+    const updatedGame = await Game.findByIdAndUpdate(req.params.id, updateData,{
       new: true,
     })
     if (!updatedGame) {

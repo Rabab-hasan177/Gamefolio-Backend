@@ -23,7 +23,7 @@ app.use(express.static('public'))
 
 app.use('/User', UserRouter)
 app.use('/Game', GameRouter)
-app.use('/Comment', CommentRouter )
+app.use('/comment', CommentRouter )
 
 app.listen(PORT, () => {
   console.log(`Running Server on Port ${PORT} . . . `)
