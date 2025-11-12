@@ -23,13 +23,12 @@
 
 ***
 ### ***ERD***
-![image](./images/Screenshot%20(94).png)
+![image](./images/Screenshot%20(104).png)
 
-### ***com***
+### ***CHD***
 ![image](./images/component(1).png)
 
 ### ***WireFrame***
-![image](./images/Screenshot%20(94).png)
 ![image](./images/Screenshot%20(95).png)
 ![image](./images/Screenshot%20(96).png)
 ![image](./images/Screenshot%20(97).png)
@@ -37,6 +36,7 @@
 ![image](./images/Screenshot%20(99).png)
 ![image](./images/Screenshot%20(100).png)
 
-### ***Website***
+
 
 ### ***Credits***
+* Hawraa Alam
